@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +13,6 @@ use App\Http\Controllers\PublicController;
 |
 */
 
-// Ruta para la landing page
-Route::get('/', [PublicController::class, 'home'])->name('home');
-
-// Ruta para la sección de vacantes
-Route::get('/vacantes', [PublicController::class, 'vacancies'])->name('vacancies');
-
-
-
-
+Route::get('/', function () {
+    return view('welcome');
+});
